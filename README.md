@@ -101,15 +101,16 @@ And tables used by queries:
 
 ## Configuration
 
-DB connection is currently hardcoded in:
+DB connection settings are read from environment variables by:
 - `src/main/java/code/vibes/onlinebankingsystem/databaseconnection/DatabaseConnection.java`
 
-Current values in code:
-- URL: `jdbc:mysql://localhost:3306/bankingsystem?useSSL=false&serverTimezone=UTC`
-- Username: `root`
-- Password: `Mahesh@1234`
+Set these values before running:
 
-> Update these credentials for your local setup before running.
+```bash
+export DB_URL="jdbc:mysql://localhost:3306/bankingsystem?useSSL=false&serverTimezone=UTC"
+export DB_USERNAME="root"
+export DB_PASSWORD="your-password"
+```
 
 ---
 
@@ -154,11 +155,10 @@ Run `App.java` from your IDE (recommended), using main class:
 
 ## Suggested Improvements
 
-1. Move DB credentials to environment variables or properties file.
-2. Add transaction handling for money transfer (`setAutoCommit(false)` + rollback).
-3. Hash passwords instead of storing plain text.
-4. Add real unit/integration tests for DAO operations.
-5. Add SQL migration/init scripts for reproducible setup.
+1. Add transaction handling for money transfer (`setAutoCommit(false)` + rollback).
+2. Hash passwords instead of storing plain text.
+3. Add real unit/integration tests for DAO operations.
+4. Add SQL migration/init scripts for reproducible setup.
 
 ---
 
